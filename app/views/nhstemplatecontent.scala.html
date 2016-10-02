@@ -1,0 +1,31 @@
+@(name: String, assessment: model.Assessment)
+
+@import play.twirl.api.Html
+@import play.api.Play.current
+@import play.api.i18n.Messages.Implicits._
+@import helper._
+
+<br>
+<h1>@name</h1>
+
+
+<strong>Symptoms</strong>
+<ul>
+    @for(symptom <- assessment.symptoms) {
+    <li>@symptom</li>
+    }
+</ul>
+
+<strong>Investigation</strong>
+<ul>
+    @for(investigate <- assessment.investigation) {
+    <li>@investigate</li>
+    }
+</ul>
+
+<strong>Referral</strong>
+<ul>
+    <li>@assessment.referral</li>
+</ul>
+
+<br><br><a href="http://localhost:9000/home">home</a></strong>

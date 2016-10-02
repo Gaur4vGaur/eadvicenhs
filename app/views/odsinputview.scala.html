@@ -1,0 +1,16 @@
+@(odsForm: Form[model.forms.OdsInput])
+
+@import play.twirl.api.Html
+@import play.api.Play.current
+@import play.api.i18n.Messages.Implicits._
+@import helper._
+
+<br>
+<h1>TEXT INPUT</h1>
+
+@helper.form(action = controllers.nhs.routes.OpenODSController.fetchSampleODSData) {
+    @helper.inputText(odsForm("name"))
+    <button id="continue" type="submit">
+        submit
+    </button>
+}

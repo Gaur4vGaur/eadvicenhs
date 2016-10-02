@@ -1,0 +1,8 @@
+@(toDoList: List[String])
+<br>
+<h1>TO DO LIST</h1>
+<ul>
+    @for(order <- toDoList) {
+    <li>@order</li>
+    }
+</ul>

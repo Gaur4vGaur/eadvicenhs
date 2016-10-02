@@ -1,0 +1,10 @@
+@(orgs: model.Organisations)
+
+<br>
+<h1>LIST</h1>
+
+<ul>
+    @for(org <- orgs.organisations) {
+    <li>@org</li>
+    }
+</ul>

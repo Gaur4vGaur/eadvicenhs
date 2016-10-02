@@ -1,0 +1,23 @@
+@(stats: scala.collection.mutable.Map[String, model.AdviceRecord])
+
+@import play.twirl.api.Html
+@import play.api.Play.current
+@import play.api.i18n.Messages.Implicits._
+@import helper._
+
+<h1>History</h1>
+<br><a href="http://localhost:9000/home">home</a></strong>
+<br><br>
+<ul>
+    @for((key, advice) <- stats) {
+    <li>
+        <div>
+            <strong>Phone Number</strong> : @key<br>
+            <strong>Time</strong>         : @advice.timeStamp<br>
+            <strong>Diagnosis</strong>    : @advice.adviceInput.advice<br>
+            <strong>Link</strong>         : <a href=@advice target="_blank">@advice.link</a><br>
+        </div>
+        <br><br>
+    </li>
+    }
+</ul>

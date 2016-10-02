@@ -1,0 +1,25 @@
+@(adviceForm: Form[model.forms.AdviceInput], keys: Seq[(String, String)])
+
+@import play.twirl.api.Html
+@import play.api.Play.current
+@import play.api.i18n.Messages.Implicits._
+@import helper._
+
+<br>
+<h1>Send Advice</h1>
+
+@helper.form(action = controllers.nhs.routes.EAdviceController.fetchAdviceMenuAction) {
+
+    <strong>@helper.select(
+        field = adviceForm("advice"),
+        options = keys,
+        args = '_label -> "* Leaflet"
+    )</strong>
+
+    <strong>@helper.inputText(adviceForm("number"), args = 'size -> 10, '_label -> "* Patient Phone Number")</strong>
+    <strong>@helper.inputText(adviceForm("email"), args = '_label -> "Patient Email")</strong>
+
+    <button id="continue" type="submit">Send</button>
+}
+
+<br><a href="http://localhost:9000/home">home</a></strong>

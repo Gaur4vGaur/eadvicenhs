@@ -1,0 +1,34 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# An example controller showing a sample home page
+GET     /                           controllers.HomeController.index
+# An example controller showing how to use dependency injection
+GET     /count                      controllers.CountController.count
+# An example controller showing how to write asynchronous code
+GET     /message                    controllers.AsyncController.message
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
+
+
+# NHS hack day sample code
+GET     /todo                       controllers.nhs.TodoController.tasksToDo
+POST    /odsSampleData              controllers.nhs.OpenODSController.fetchSampleODSData
+GET     /odsSampleData              controllers.nhs.OpenODSController.provideInput
+
+# EAdvice
+
+GET     /fetchAdvice                controllers.nhs.EAdviceController.fetchAdviceMenu
+POST    /fetchAdvice                controllers.nhs.EAdviceController.fetchAdviceMenuAction
+
+GET     /reviewTemplates            controllers.nhs.EAdviceController.reviewAdviceMenu
+#POST    /reviewTemplates            controllers.nhs.EAdviceController.reviewAdviceMenuAction
+
+GET     /advicesOut                 controllers.nhs.EAdviceController.advicesOut
+
+GET     /login                      controllers.nhs.EAdviceController.login
+POST    /login                      controllers.nhs.EAdviceController.loginAction
+
+GET     /home                        controllers.nhs.EAdviceController.homePage

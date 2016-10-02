@@ -1,0 +1,19 @@
+@(templateForm: Form[model.forms.TemplateInput], map: Map[String, String])
+
+@import play.twirl.api.Html
+@import play.api.Play.current
+@import play.api.i18n.Messages.Implicits._
+@import helper._
+
+<br>
+<h1>Template To Review</h1>
+
+    @for((key, advice) <- map) {
+        <div>
+            <strong>Diagnosis</strong>             : @key<br>
+            <strong>Template Link</strong>         : <a href=@advice target="_blank">@advice</a><br>
+        </div>
+        <br><br>
+    }
+<br><br>
+<strong><a href="http://localhost:9000/home">home</a></strong>
